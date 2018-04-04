@@ -1,6 +1,8 @@
+"use strict"
 $(function(){
 	/*建立socket连接，使用websocket协议，端口号是服务器端监听端口号*/
-	var socket = io('ws://localhost:8081');
+	//var socket = io('ws://localhost:8081');
+	var socket = io();
 	/*定义用户名*/
 	var uname = null;
 
@@ -13,7 +15,7 @@ $(function(){
 		}else{
 			alert('请输入昵称')
 		}
-	})
+	});
 
 	/*发送消息*/
 	$('.sendBtn').click(function(){
@@ -23,7 +25,7 @@ $(function(){
 		if(event.keyCode == 13){
 			sendMessage()
 		}
-	})
+	});
 
 	/*登录成功*/
 	socket.on('loginSuccess',function(data){
@@ -32,23 +34,23 @@ $(function(){
 		}else{
 			alert('用户名不匹配，请重试')
 		}
-	})
+	});
 
 	/*登录失败*/
 	socket.on('loginFail',function(){
 		alert('昵称重复')
-	})
+	});
 
 	/*新人加入提示*/
 	socket.on('add',function(data){
 		var html = '<p>系统消息:'+data.username+'已加入群聊</p>';
 		$('.chat-con').append(html);
-	})
+	});
 
 	/*接收消息*/
 	socket.on('receiveMessage',function(data){
 		showMessage(data)
-	})
+	});
 
 	/*退出群聊提示*/
 	socket.on('leave',function(name){
@@ -56,7 +58,7 @@ $(function(){
 			var html = '<p>FBI warning:'+name+'已退出群聊</p>';
 			$('.chat-con').append(html);
 		}
-	})
+	});
 
 	/*隐藏登录界面 显示聊天界面*/
 	function checkin(data){
@@ -75,7 +77,7 @@ $(function(){
 
 	/*显示消息*/
 	function showMessage(data){
-		var html
+		var html;
 		if(data.username === uname){
 			html = '<div class="chat-item item-right clearfix"><span class="img fr"></span><span class="message fr">'+data.message+'</span></div>'
 		}else{

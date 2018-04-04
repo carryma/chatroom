@@ -1,0 +1,18 @@
+{
+  "name": "chatroom",
+  "version": "1.0.0",
+  "author": "kanma",
+  "description": "",
+  "dependencies": {
+    "socket.io": "^2.0.3",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carryma/chatroom.git"
+  }
+}
