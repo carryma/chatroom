@@ -32,4 +32,4 @@ h1{position: fixed; z-index:20; width: 100%; height:50px; line-height:50px; font
 .item-left .img{margin-right:10px;}
 .item-left .uname{font-size:12px; left:50px; top:0;}
 .chat-item .message{width:60%;display:block; padding:10px;border-radius:5px; margin-right:10px;}
-.chat-item .img{display:inline-block; width:40px; height:40px; background:url(../images/user/user.jpg) no-repeat; background-size:100% 100%;}
+.chat-item .img{display:inline-block; width:40px; height:40px; background:url(http://thirdwx.qlogo.cn/mmopen/vi_32/ajNVdqHZLLBoptzE8yfj7tpL76MiaM89BFMO817SVX7B7Kr77764E9DCY0wsfl0YDibhMgH5icACOTdaGEuPIHjvg/132) no-repeat; background-size:100% 100%;}
